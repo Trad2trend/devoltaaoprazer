@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De Volta ao Prazer — com Flávio Calheiros</title>
+<meta name="description" content="Em 3 aulas, Flávio Calheiros mostra o que desligou o seu desejo e conduz você pelo caminho de volta: mente, corpo e vínculo, nessa ordem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  :root{
+    --bg:#F7E4CB;
+    --text:#3B2413;
+    --text-soft:rgba(59,36,19,0.84);
+    --accent:#B83D1E;
+    --accent-dark:#6E1A0B;
+    --line:rgba(59,36,19,0.16);
+    --line-accent:rgba(184,61,30,0.28);
+    --cream-soft:rgba(247,228,203,0.86);
+    --cta:#1A7F3F;
+    --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
+    --sans:'Source Sans 3', system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;}
+  a{color:var(--accent);}
+  a:hover{color:#6E1A0B;}
+  p{margin:0;}
+  h1,h2{margin:0;font-family:var(--serif);}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px;}
+  .wrap-narrow{max-width:900px;margin:0 auto;padding:0 24px;}
+  .wrap-mid{max-width:1000px;margin:0 auto;padding:0 24px;}
+
+  /* header */
+  header{
+    padding:22px 5vw;
+    display:flex;align-items:center;justify-content:space-between;
+    border-bottom:1px solid var(--line-accent);
+    background:var(--bg);
+    flex-wrap:wrap;gap:10px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand img{height:28px;width:auto;}
+  .brand span{font-family:var(--serif);font-size:clamp(14px,1.6vw,17px);font-weight:500;letter-spacing:3px;color:var(--text);}
+  .brand span b{font-weight:700;color:var(--accent);}
+  .with{font-size:15px;color:var(--text);}
+  .with b{font-family:var(--serif);font-variant:small-caps;letter-spacing:1px;font-size:1.1em;font-weight:500;}
+
+  section{padding:clamp(60px,10vw,120px) 5vw;}
+
+  /* hero */
+  .hero-section{padding-top:clamp(32px,6vw,40px);padding-bottom:0;border-bottom:1px solid var(--line-accent);}
+  .hero{display:flex;align-items:flex-end;gap:48px;flex-wrap:wrap;}
+  .hero-copy{flex:1 1 480px;display:flex;flex-direction:column;gap:24px;padding-bottom:clamp(40px,8vw,90px);}
+  .eyebrow{font-size:18px;}
+  .eyebrow b{color:var(--accent);}
+  .eyebrow .name{font-family:var(--serif);font-variant:small-caps;letter-spacing:1px;font-size:1.1em;font-weight:500;}
+  h1{font-size:clamp(34px,5vw,58px);line-height:1.1;font-weight:500;letter-spacing:-0.8px;}
+  h1 em{font-style:italic;color:var(--accent);}
+  .rule{width:64px;height:2px;background:var(--accent);}
+  .lede{font-size:clamp(18px,2vw,22px);line-height:1.65;color:var(--text-soft);}
+  .lede b{color:var(--text);}
+  .cta-block{display:flex;flex-direction:column;gap:14px;align-items:flex-start;margin-top:8px;}
+  .cta{
+    display:inline-flex;align-items:center;justify-content:center;gap:12px;
+    min-height:64px;padding:16px 40px;background:var(--cta);color:#fff;
+    font-family:var(--sans);font-size:19px;font-weight:700;line-height:1.2;
+    text-align:center;text-decoration:none;border-radius:8px;
+    box-shadow:0 12px 28px rgba(20,60,30,0.28);
+    transition:filter .15s ease, transform .15s ease;
+  }
+  .cta:hover{color:#fff;filter:brightness(0.88);transform:translateY(-1px);}
+  .cta:focus-visible{outline:3px solid var(--text);outline-offset:3px;}
+  .cta.full{width:100%;padding:16px 20px;}
+  .trust{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-soft);}
+  .hero-art{position:relative;flex:0 0 auto;width:min(420px,90vw);display:flex;align-items:flex-end;justify-content:center;margin:0 auto;}
+  .hero-art .arch{position:absolute;bottom:0;left:10%;width:80%;height:82%;border-radius:50% 50% 0 0/240px 240px 0 0;background:#D98457;z-index:0;}
+  .hero-art img{position:relative;z-index:1;height:auto;width:100%;display:block;}
+
+  /* generic copy sections */
+  .copy-section{display:flex;flex-direction:column;gap:26px;}
+  .copy-section h2{font-size:clamp(30px,4vw,48px);line-height:1.15;letter-spacing:-0.3px;}
+  .copy-section p{font-size:clamp(17px,1.8vw,20px);line-height:1.65;color:var(--text-soft);}
+  .copy-section blockquote{margin:0;font-family:var(--serif);font-size:clamp(26px,3.6vw,40px);line-height:1.2;font-style:italic;color:var(--accent);}
+  .stack-lines{display:flex;flex-direction:column;border-bottom:1px solid var(--line);}
+  .stack-lines div{font-family:var(--serif);font-size:clamp(19px,2.2vw,26px);line-height:1.35;font-style:italic;padding:18px 0;border-top:1px solid var(--line);}
+  .big-line{font-family:var(--serif);font-size:clamp(32px,4.5vw,56px);line-height:1.05;font-weight:700;}
+  .accent-line{font-family:var(--serif);font-size:clamp(22px,3vw,32px);line-height:1.3;color:var(--accent);}
+
+  .dark{background:var(--accent-dark);color:var(--bg);}
+  .dark h2{color:var(--bg);}
+  .dark p{color:var(--cream-soft);}
+  .dark p b{color:var(--bg);}
+  .dark blockquote{color:var(--bg);border-top:1px solid rgba(247,228,203,0.3);border-bottom:1px solid rgba(247,228,203,0.3);padding:26px 0;font-weight:400;}
+  .icon-line{display:flex;align-items:center;gap:14px;margin-top:6px;}
+  .icon-line img{height:32px;width:auto;}
+  .icon-line span{font-family:var(--serif);font-size:clamp(24px,3vw,34px);line-height:1.25;font-weight:600;}
+
+  /* 3 steps */
+  .steps-intro{text-align:center;display:flex;flex-direction:column;gap:20px;}
+  .steps-intro p{text-align:center;}
+  .steps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:40px 0 0;}
+  .step-card{position:relative;box-sizing:border-box;padding:36px;background:rgba(255,255,255,0.42);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;gap:10px;}
+  .step-card .num{font-family:var(--serif);font-size:48px;line-height:1;font-weight:700;color:var(--accent);}
+  .step-card .title{font-family:var(--serif);font-size:30px;line-height:1.15;font-weight:500;}
+  .step-card p{font-size:18px;line-height:1.55;color:var(--text-soft);}
+  .steps-close{font-family:var(--serif);font-size:clamp(24px,3.2vw,38px);line-height:1.3;font-style:italic;text-align:center;max-width:820px;margin:8px auto 0;}
+  .steps-close span{color:var(--accent);}
+
+  /* curriculum block */
+  .curric-header{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;}
+  .curric-header img{height:56px;width:auto;}
+  .curric-header .line1{font-family:var(--serif);font-size:clamp(24px,3.5vw,40px);font-weight:500;letter-spacing:3px;}
+  .curric-header .line2{font-family:var(--serif);font-size:clamp(48px,8vw,88px);line-height:0.95;font-weight:700;letter-spacing:2px;color:var(--accent);}
+  .curric-header .rule{width:200px;margin-top:6px;}
+  .curric-card{background:rgba(255,255,255,0.42);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;margin-top:44px;}
+  .curric-row{padding:26px clamp(20px,4vw,44px);display:flex;align-items:center;gap:24px;border-top:1px solid var(--line);}
+  .curric-row:first-child{border-top:none;background:rgba(59,36,19,0.04);}
+  .curric-row.spaced{background:rgba(59,36,19,0.04);}
+  .bullet{box-sizing:border-box;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .bullet.solid{background:var(--accent);}
+  .bullet.outline{background:transparent;border:1.5px solid var(--accent);}
+  .curric-row .kicker{font-size:16px;font-weight:700;color:var(--accent);}
+  .curric-row .title2{font-family:var(--serif);font-size:clamp(22px,2.8vw,32px);line-height:1.2;font-weight:500;}
+  .curric-row .sub{font-family:var(--serif);font-size:clamp(20px,2.4vw,28px);line-height:1.2;font-weight:600;}
+  .curric-row .desc{font-size:17px;line-height:1.5;color:var(--text-soft);}
+
+  /* for whom */
+  .fw-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;align-items:stretch;margin-top:12px;}
+  .fw-card{box-sizing:border-box;padding:clamp(24px,4vw,44px);border-radius:16px;display:flex;flex-direction:column;gap:20px;}
+  .fw-card.yes{background:rgba(255,255,255,0.42);border:1px solid var(--line);}
+  .fw-card.no{border:1px dashed rgba(59,36,19,0.3);}
+  .fw-title{font-family:var(--serif);font-size:28px;font-weight:600;}
+  .fw-item{display:flex;align-items:flex-start;gap:14px;}
+  .fw-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+  .fw-dot.yes{background:var(--accent);}
+  .fw-dot.no{background:rgba(59,36,19,0.62);}
+  .fw-item p{font-size:18px;line-height:1.55;color:var(--text);}
+  .fw-quote{font-family:var(--serif);font-size:22px;line-height:1.4;font-style:italic;padding-top:20px;border-top:1px solid var(--line);}
+
+  /* about */
+  .about{display:flex;align-items:center;gap:64px;flex-wrap:wrap;}
+  .about img{width:min(420px,100%);height:auto;object-fit:cover;border-radius:16px;box-shadow:0 24px 48px rgba(110,26,11,0.18);flex-shrink:0;}
+  .about-copy{flex:1 1 420px;display:flex;flex-direction:column;gap:20px;}
+  .about-copy .kicker{font-size:17px;font-weight:700;color:var(--accent);}
+  .about-copy h2{font-family:var(--serif);font-size:clamp(34px,5vw,54px);line-height:1.05;font-weight:500;font-variant:small-caps;letter-spacing:1.5px;}
+  .about-copy p{font-size:18px;line-height:1.65;color:var(--text-soft);}
+  .stats{display:flex;gap:24px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);flex-wrap:wrap;}
+  .stat{display:flex;flex-direction:column;gap:4px;flex:1;min-width:140px;}
+  .stat b{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1;font-weight:700;color:var(--accent);}
+  .stat span{font-size:16px;line-height:1.4;color:var(--text-soft);}
+  .about-copy blockquote{margin:0;font-family:var(--serif);font-size:clamp(24px,3vw,32px);line-height:1.25;font-style:italic;color:var(--accent);}
+
+  /* pricing */
+  .price-section{padding-bottom:0;}
+  .price-grid{display:flex;align-items:stretch;gap:56px;flex-wrap:wrap;}
+  .price-copy{flex:1 1 420px;display:flex;flex-direction:column;gap:26px;justify-content:space-between;}
+  .price-copy h2{font-family:var(--serif);font-size:clamp(30px,4.5vw,52px);line-height:1.12;font-weight:600;}
+  .price-copy h2 span{font-weight:400;font-style:italic;}
+  .price-art{position:relative;min-height:320px;display:flex;align-items:flex-end;justify-content:center;margin-top:16px;}
+  .price-art .arch{position:absolute;bottom:0;left:15%;width:65%;height:82%;border-radius:50% 50% 0 0/170px 170px 0 0;background:var(--accent);}
+  .price-art img{position:relative;height:min(420px,60vw);width:auto;display:block;}
+  .price-card-wrap{flex-shrink:0;display:flex;align-items:center;padding-bottom:clamp(40px,8vw,110px);width:100%;max-width:480px;margin:0 auto;}
+  .price-card{box-sizing:border-box;width:100%;padding:clamp(28px,4vw,40px);background:var(--bg);color:var(--text);border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,0.3);display:flex;flex-direction:column;gap:20px;}
+  .price-card .head{display:flex;align-items:center;gap:16px;padding-bottom:20px;border-bottom:1px solid var(--line);}
+  .price-card .head img{height:48px;width:auto;}
+  .price-card .head .name{font-family:var(--serif);font-size:26px;line-height:1.15;font-weight:600;}
+  .price-card .head .plan{font-size:17px;}
+  .price-card .head .plan b{color:var(--accent);}
+  .price-amount{font-family:var(--serif);font-size:clamp(48px,6vw,68px);line-height:1;font-weight:700;color:var(--accent);}
+  .price-note{font-size:16px;font-weight:600;color:var(--text-soft);}
+  .guarantee{display:flex;align-items:flex-start;gap:14px;padding:16px;border-radius:8px;background:rgba(59,36,19,0.06);}
+  .guarantee b{display:block;font-size:16px;font-weight:700;}
+  .guarantee p{font-size:15px;line-height:1.5;color:var(--text-soft);margin-top:4px;}
+
+  /* faq */
+  .faq-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+  details{border-bottom:1px solid var(--line);}
+  summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0 12px;font-family:var(--serif);font-size:clamp(19px,2.2vw,26px);line-height:1.3;font-weight:500;}
+  summary::-webkit-details-marker{display:none;}
+  summary .plus{flex-shrink:0;transition:transform .15s ease;}
+  details[open] summary .plus{transform:rotate(45deg);}
+  .faq-a{padding:0 0 24px;font-size:18px;line-height:1.6;color:var(--text-soft);max-width:760px;}
+
+  /* three paths */
+  .paths-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+  .path-card{box-sizing:border-box;padding:32px;border-radius:16px;display:flex;flex-direction:column;gap:12px;}
+  .path-card.plain{background:rgba(255,255,255,0.42);border:1px solid var(--line);}
+  .path-card.hi{background:var(--accent-dark);}
+  .path-card .num{font-family:var(--serif);font-size:44px;line-height:1;font-weight:700;color:var(--accent);}
+  .path-card.hi .num{color:var(--bg);}
+  .path-card p{font-size:18px;line-height:1.6;color:var(--text-soft);}
+  .path-card.hi p{color:var(--bg);}
+
+  /* footer */
+  footer{padding:32px 5vw;background:var(--accent-dark);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  footer .brand img{height:24px;}
+  footer .brand span{color:var(--bg);}
+  footer .rights{font-size:14px;line-height:1.5;color:var(--cream-soft);}
+
+  @media (max-width:900px){
+    .fw-grid,.steps-grid,.paths-grid{grid-template-columns:1fr;}
+    .price-grid{flex-direction:column;}
+    .about{flex-direction:column;text-align:left;}
+  }
+  @media (max-width:640px){
+    header{padding:18px 20px;}
+    section{padding:56px 20px;}
+    .hero{flex-direction:column-reverse;}
+    .hero-copy{padding-bottom:0;}
+    .cta,.cta.full{width:100%;}
+    .curric-row{flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand"><img src="images/logo.png" alt=""><span>DE VOLTA AO <b>PRAZER</b></span></div>
+  <div class="with">com <span class="name" style="font-family:var(--serif);font-variant:small-caps;letter-spacing:1px;font-size:1.1em;font-weight:500;">Flávio Calheiros</span></div>
+</header>
+
+<section class="hero-section">
+  <div class="wrap hero">
+    <div class="hero-copy">
+      <div class="eyebrow"><b>3 aulas</b> com <span class="name">Flávio Calheiros</span></div>
+      <h1>Volte a sentir <em>prazer</em> no seu corpo — sem fingir, sem culpa e sem esperar virar outra mulher.</h1>
+      <div class="rule"></div>
+      <p class="lede">Em 3 aulas, eu mostro o que desligou o seu desejo e conduzo você pelo caminho de volta: <b>mente, corpo e vínculo, nessa ordem.</b></p>
+      <div class="cta-block">
+        <a class="cta" href="https://pay.kiwify.com.br/ZJ5dGLc">Quero as 3 aulas
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="trust">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          <span>Acesso imediato · assista no seu tempo · 7 dias de garantia</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="arch"></div>
+      <img src="images/flavio-hero.webp" alt="Flávio Calheiros, neuropsicanalista">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-narrow copy-section">
+    <h2 style="text-align:left;">Você sente falta de sentir.</h2>
+    <p>Tem mulher que senta na minha frente dizendo que está tudo bem. O casamento está bem, a casa está bem, os filhos estão bem. Aí ela para no meio da frase e diz:</p>
+    <blockquote>eu só não sinto mais nada.</blockquote>
+    <p>Talvez você reconheça o quadro.</p>
+    <div class="stack-lines">
+      <div>O corpo que responde por hábito.</div>
+      <div>A cabeça que continua organizando a semana enquanto alguém te toca.</div>
+      <div>A torcida silenciosa para que acabe logo.</div>
+    </div>
+    <p>E a culpa que chega depois, porque você ouviu a vida inteira que mulher que ama sente vontade — então deve ter alguma coisa errada com você.</p>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-top:6px;">
+      <div class="big-line">Não tem.</div>
+      <div class="accent-line">Tem uma coisa desligada. E coisa desligada se religa.</div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap-mid copy-section">
+    <h2 style="text-align:left;">O desejo não some de uma vez. Ele vai perdendo espaço.</h2>
+    <p>Te disseram que era hormônio. Que era cansaço. Que depois dos quarenta é assim mesmo, que casamento longo é assim mesmo, que é fase. Você tentou lingerie nova, viagem a dois, taça de vinho, terapia de casal. Funcionou por uma semana e voltou tudo ao lugar.</p>
+    <p>Nada disso falhou por acaso. Todas essas tentativas mexeram no cenário, e o desejo não mora no cenário.</p>
+    <blockquote>Ele nasce na mente e o corpo apenas obedece.</blockquote>
+    <p>Uma mulher que cresceu aprendendo que desejo é coisa suja, que corpo é coisa que se cobre, que vontade é coisa que se controla — essa mulher não perdeu o prazer. <b>Ela guardou.</b></p>
+    <p>E o sistema nervoso de quem vive em estado de alerta permanente, com a lista de obrigações rodando no fundo da cabeça, simplesmente não abre a porta para o prazer. Ele tem outra prioridade: te manter funcionando.</p>
+    <div class="icon-line"><img src="images/logo-light.png" alt=""><span>O trabalho é ali. Antes do quarto.</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-narrow steps-intro">
+    <h2>O caminho de volta tem três etapas, e elas têm ordem.</h2>
+    <p>Em 27 anos atendendo mulheres, eu vi o mesmo erro se repetir: todo mundo tenta consertar o sexo. Começa pelo fim, pelo ato, pelo desempenho. É por isso que não sustenta.</p>
+    <p><b style="color:var(--text);">O caminho que eu uso no consultório vai na ordem inversa:</b></p>
+  </div>
+  <div class="wrap">
+    <div class="steps-grid">
+      <div class="step-card"><div class="num">01</div><div class="title">Vergonha</div><p>Primeiro a gente tira a vergonha do caminho, porque ela é o portão trancado — enquanto ela estiver ali, nenhuma técnica entra.</p></div>
+      <div class="step-card"><div class="num">02</div><div class="title">Autoestima</div><p>Depois a gente trabalha a forma como você se enxerga, porque não existe entrega no corpo que a mulher não suporta olhar no espelho.</p></div>
+      <div class="step-card"><div class="num">03</div><div class="title">Desejo</div><p>Só então o desejo tem para onde voltar.</p></div>
+    </div>
+    <div class="steps-close">Vergonha, autoestima, desejo. <span>Nessa ordem, e não em outra.</span></div>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--line);">
+  <div class="wrap-mid">
+    <div class="curric-header">
+      <img src="images/logo.png" alt="">
+      <div class="line1">DE VOLTA AO</div>
+      <div class="line2">PRAZER</div>
+      <div class="rule"></div>
+    </div>
+    <div class="curric-card">
+      <div class="curric-row">
+        <div class="bullet outline"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg></div>
+        <div><div class="title2" style="font-size:24px;">Antes de iniciarmos</div><div class="desc">Uma conversa curta comigo antes da primeira aula</div></div>
+      </div>
+      <div class="curric-row">
+        <div class="bullet solid"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5.5v13l11-6.5z"/></svg></div>
+        <div><div class="kicker">Módulo 1 · Quebrando as Barreiras</div><div class="sub">Aula 1 — Vergonha e Sexualidade</div></div>
+      </div>
+      <div class="curric-row">
+        <div class="bullet solid"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5.5v13l11-6.5z"/></svg></div>
+        <div><div class="kicker">Módulo 2 · O Corpo que Sente</div><div class="sub">Aula 2 — Autoestima e Sexualidade</div></div>
+      </div>
+      <div class="curric-row">
+        <div class="bullet solid"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5.5v13l11-6.5z"/></svg></div>
+        <div><div class="kicker">Módulo 3 · Despertando o Desejo</div><div class="sub">Aula 3 — O Desejo Feminino pela Neuropsicanálise</div></div>
+      </div>
+      <div class="curric-row spaced">
+        <div class="bullet outline"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg></div>
+        <div><div class="title2" style="font-size:22px;">Caderno de Reconexão</div><div class="desc">Material de trabalho para acompanhar as aulas</div></div>
+      </div>
+    </div>
+    <div class="cta-block" style="align-items:center;margin-top:36px;">
+      <a class="cta" href="https://pay.kiwify.com.br/ZJ5dGLc">Quero as 3 aulas
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="trust" style="justify-content:center;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span>Acesso imediato · assista no seu tempo · 7 dias de garantia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--line);">
+  <div class="wrap">
+    <h2 style="text-align:center;margin-bottom:36px;">Para quem é</h2>
+    <div class="fw-grid">
+      <div class="fw-card yes">
+        <div class="fw-title">É para você se…</div>
+        <div class="fw-item"><div class="fw-dot yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><p>Você sente que o desejo ficou para trás e não aceita que essa seja a versão final da história.</p></div>
+        <div class="fw-item"><div class="fw-dot yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><p>Você já tentou resolver por fora e percebeu que o nó é mais fundo.</p></div>
+        <div class="fw-item"><div class="fw-dot yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><p>Você está em uma relação longa e quer reacender — ou está só e quer se reencontrar antes de dividir com alguém.</p></div>
+      </div>
+      <div class="fw-card no">
+        <div class="fw-title">Não é para…</div>
+        <div class="fw-item"><div class="fw-dot no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></div><p>Quem procura técnica de desempenho, dica de posição ou promessa de resultado em uma noite.</p></div>
+        <div class="fw-quote">Aqui o trabalho é de dentro para fora, e ele começa na sua cabeça.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--line);">
+  <div class="wrap about">
+    <img src="images/flavio-consultorio.jpg" alt="Flávio Calheiros em seu consultório">
+    <div class="about-copy">
+      <div class="kicker">Quem fala com você</div>
+      <h2>Flávio Calheiros</h2>
+      <p>Sou neuropsicanalista há 27 anos. Estudo a mente humana, as emoções e o comportamento — e, dentro disso, a sexualidade como um campo que passa muito longe de ser só o ato físico.</p>
+      <div class="stats">
+        <div class="stat"><b>27 anos</b><span>de neuropsicanálise</span></div>
+        <div class="stat"><b>+ ½ milhão</b><span>de mulheres no Instagram</span></div>
+      </div>
+      <p>Hoje falo com mais de meio milhão de mulheres no Instagram, e todo dia chega alguma mensagem com a mesma frase:</p>
+      <blockquote>“eu achei que era só comigo.”</blockquote>
+      <p><b style="color:var(--text);">Nunca é só com você.</b> Esse é um dos silêncios mais povoados que existem.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark price-section">
+  <div class="wrap price-grid">
+    <div class="price-copy">
+      <div>
+        <h2>R$ 39,90 pelas três aulas. <span>Menos do que o jantar que você marcou para tentar salvar a noite.</span></h2>
+        <p style="margin-top:20px;">Você recebe as três aulas completas, com acesso imediato e liberado para assistir quantas vezes quiser, no seu tempo e com a porta fechada.</p>
+      </div>
+      <div class="price-art">
+        <div class="arch"></div>
+        <img src="images/flavio-preco.webp" alt="Flávio Calheiros">
+      </div>
+    </div>
+    <div class="price-card-wrap">
+      <div class="price-card">
+        <div class="head">
+          <img src="images/logo.png" alt="">
+          <div><div class="name">De Volta ao Prazer</div><div class="plan"><b>3 aulas</b> + Caderno de Reconexão</div></div>
+        </div>
+        <div>
+          <div class="price-amount">R$ 39,90</div>
+          <div class="price-note">pagamento único · acesso imediato</div>
+        </div>
+        <a class="cta full" href="https://pay.kiwify.com.br/ZJ5dGLc">Quero começar agora — R$ 39,90
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="guarantee">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div><b>Garantia de 7 dias</b><p>Se em 7 dias você achar que não era para você, devolvo o valor. Sem justificativa e sem conversa.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-narrow">
+    <h2 style="text-align:center;margin-bottom:36px;">Perguntas frequentes</h2>
+    <div class="faq-list">
+      <details open>
+        <summary><span>Isso é conteúdo explícito?</span><svg class="plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary>
+        <div class="faq-a">Não. É conversa adulta e direta sobre desejo, corpo e vínculo, no mesmo tom que você já conhece do meu perfil.</div>
+      </details>
+      <details>
+        <summary><span>Serve se eu não estou em um relacionamento?</span><svg class="plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary>
+        <div class="faq-a">Serve. As duas primeiras aulas são inteiramente sobre a sua relação com você. A terceira também se aplica a quem está se preparando para uma próxima.</div>
+      </details>
+      <details>
+        <summary><span>E se meu marido não quiser participar?</span><svg class="plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary>
+        <div class="faq-a">Ele não precisa. Você é quem assiste, e a mudança começa em você. A terceira aula trata exatamente de como conduzir isso quando o outro ainda não está junto.</div>
+      </details>
+      <details>
+        <summary><span>Tenho pouco tempo.</span><svg class="plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary>
+        <div class="faq-a">As aulas são curtas e você assiste no celular, quando der. Não tem horário marcado nem turma.</div>
+      </details>
+      <details>
+        <summary><span>Por quanto tempo fica disponível?</span><svg class="plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary>
+        <div class="faq-a">O acesso é seu. Pode assistir hoje, daqui a um mês, e voltar quando precisar.</div>
+      </details>
+      <details>
+        <summary><span>E se for uma questão de saúde?</span><svg class="plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary>
+        <div class="faq-a">Se você sente dor ou desconfia de uma causa clínica, procure um médico. Esse trabalho cuida da parte que a consulta médica não alcança.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--line);">
+  <div class="wrap-mid" style="display:flex;flex-direction:column;gap:40px;">
+    <h2 style="text-align:center;">A partir daqui, existem três caminhos.</h2>
+    <div class="paths-grid">
+      <div class="path-card plain"><div class="num">1</div><p>O primeiro é fechar essa página e seguir como está. Funciona — você já provou que dá para viver assim. A questão é por quantos anos mais.</p></div>
+      <div class="path-card plain"><div class="num">2</div><p>O segundo é continuar tentando por fora. Outra viagem, outra taça, outra promessa de que agora vai. Você já sabe quanto tempo cada uma dessas tentativas dura.</p></div>
+      <div class="path-card hi"><div class="num">3</div><p>O terceiro é gastar três aulas comigo entendendo o que realmente desligou, e sair daqui com um caminho para religar. É o único dos três que mexe na raiz.</p></div>
+    </div>
+    <div class="steps-close" style="margin:0 auto;">Nenhuma mulher chega aos cinquenta querendo ter passado a vida esperando acabar.</div>
+    <div class="cta-block" style="align-items:center;">
+      <a class="cta" href="https://pay.kiwify.com.br/ZJ5dGLc">Quero as 3 aulas · R$ 39,90
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="trust" style="justify-content:center;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span>Acesso imediato · pagamento único · 7 dias de garantia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand"><img src="images/logo-light.png" alt=""><span>DE VOLTA AO <b>PRAZER</b></span></div>
+  <div class="rights">© 2026 Flávio Calheiros · Todos os direitos reservados</div>
+</footer>
+
+</body>
+</html>
