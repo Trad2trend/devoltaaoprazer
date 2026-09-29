@@ -1,5 +1,9 @@
 {
+  "trailingSlash": false,
   "redirects": [
     { "source": "/", "destination": "/de-volta-ao-prazer", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/de-volta-ao-prazer", "destination": "/index.html" }
   ]
 }
