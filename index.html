@@ -81,7 +81,7 @@
   .cta:focus-visible{outline:3px solid var(--text);outline-offset:3px;}
   .cta.full{width:100%;padding:16px 20px;}
   .trust{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-soft);}
-  .hero-art{position:relative;flex:0 0 auto;width:min(420px,90vw);display:flex;align-items:flex-end;justify-content:center;margin:0 auto;}
+  .hero-art{position:relative;flex:0 0 auto;width:min(420px,100%);display:flex;align-items:flex-end;justify-content:center;margin:0 auto;}
   .hero-art .arch{position:absolute;bottom:0;left:10%;width:80%;height:82%;border-radius:50% 50% 0 0/240px 240px 0 0;background:#D98457;z-index:0;}
   .hero-art img{position:relative;z-index:1;height:auto;width:100%;display:block;}
 
@@ -209,17 +209,62 @@
   @media (max-width:900px){
     .fw-grid,.steps-grid,.paths-grid{grid-template-columns:1fr;}
     .price-grid{flex-direction:column;}
-    .about{flex-direction:column;text-align:left;}
+    .about{flex-direction:column;align-items:stretch;text-align:left;gap:40px;}
+    .about img{margin:0 auto;}
+    /* hero empilhada: texto em cima, foto apoiada na linha inferior */
+    .hero{flex-direction:column;align-items:stretch;gap:32px;}
+    .hero-copy{flex:0 0 auto;padding-bottom:0;}
+    .hero-art{width:min(380px,100%);}
   }
   @media (max-width:640px){
-    header{padding:18px 20px;}
+    header{padding:14px 20px;justify-content:center;flex-direction:column;gap:4px;text-align:center;}
+    .with{font-size:14px;}
     section{padding:56px 20px;}
-    .hero{flex-direction:column-reverse;}
-    .hero-copy{padding-bottom:0;}
-    .cta,.cta.full{width:100%;}
-    .curric-row{flex-wrap:wrap;}
+    .wrap,.wrap-narrow,.wrap-mid{padding:0;}
+    .hero-section{padding-top:28px;}
+    .hero-copy{gap:18px;}
+    .eyebrow{font-size:16px;}
+    h1{font-size:30px;line-height:1.15;letter-spacing:-0.4px;}
+    .lede{font-size:17px;line-height:1.6;}
+    .cta-block{align-items:stretch;}
+    .cta,.cta.full{width:100%;padding:16px 20px;font-size:17px;min-height:58px;}
+    .trust{justify-content:center;text-align:center;font-size:13px;}
+    .hero-art{width:min(320px,88%);}
+    .step-card{padding:26px;}
+    .step-card .title{font-size:26px;}
+    .curric-row{align-items:flex-start;gap:16px;padding:22px 18px;}
+    .bullet{width:40px;height:40px;}
+    .curric-header img{height:44px;}
+    .fw-title{font-size:24px;}
+    .fw-item p{font-size:17px;}
+    .price-grid{gap:32px;}
+    .price-copy p{font-size:17px;line-height:1.6;}
+    .price-art{min-height:260px;}
+    .price-art img{height:300px;}
+    .price-card-wrap{padding-bottom:56px;}
+    .price-card .head .name{font-size:22px;}
+    .path-card{padding:24px;}
+    footer{flex-direction:column;text-align:center;justify-content:center;}
   }
 </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4465516610387636');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4465516610387636&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
