@@ -78,34 +78,32 @@ b,strong{font-weight:700}
   .support{font-size:15px} .support svg{display:block}
 }
 
-/* Header */
-.top{display:flex;align-items:center;justify-content:center;padding:18px var(--px);border-bottom:1px solid rgba(184,61,30,.28)}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:15px;font-weight:500;letter-spacing:3px;color:var(--ink);text-decoration:none}
-.logo img{height:28px;width:auto}
-.logo b{color:var(--brand)}
-.top .by{display:none;font-size:16px}
-@media (min-width:900px){ .top{justify-content:space-between;padding:26px var(--px)} .logo{font-size:17px} .logo img{height:32px} .top .by{display:block} }
-
 /* Hero */
-.hero{padding:32px var(--px) 56px;border-bottom:1px solid rgba(184,61,30,.28)}
-.hero .inner{max-width:940px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
-.eyebrow{font-size:17px;line-height:1.4}
-.eyebrow b{color:var(--brand)}
-.hero h1{font-size:32px;line-height:1.12;color:var(--ink)}
+.hero{padding:28px var(--px) 56px;border-bottom:1px solid rgba(184,61,30,.28)}
+.hero .inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.hero .htext{display:contents}
+.hero h1{order:1;font-size:32px;line-height:1.12;color:var(--ink)}
 .hero h1 em{color:var(--brand)}
-.hero .sub{max-width:720px;font-size:18px;line-height:1.6;color:var(--ink-2)}
-.hero .sub b{color:var(--ink)}
-.vsl{width:100%;max-width:880px;border-radius:10px;overflow:hidden;background:var(--ink);box-shadow:0 16px 36px rgba(110,26,11,.28)}
-.vsl .ratio{position:relative;width:100%;aspect-ratio:16/9}
+.hero .hrule{display:none}
+.vsl{order:2;width:min(100%,380px,calc(80vh * .5625));border-radius:14px;overflow:hidden;background:var(--ink);box-shadow:0 20px 44px rgba(110,26,11,.3)}
+.vsl .ratio{position:relative;width:100%;aspect-ratio:9/16}
 .vsl iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.hero .sub{order:3;max-width:620px;font-size:18px;line-height:1.6;color:var(--ink-2)}
+.hero .sub b{color:var(--ink)}
+.hero .cta-block{order:4}
 @media (min-width:900px){
-  .hero{padding:56px var(--px) 96px}
-  .hero .inner{gap:28px}
-  .eyebrow{font-size:19px}
-  .hero h1{font-size:56px;letter-spacing:-.8px}
+  .hero{padding:80px var(--px) 96px}
+  .hero .inner{flex-direction:row;align-items:center;justify-content:space-between;gap:72px;text-align:left}
+  .hero .htext{display:flex;flex-direction:column;gap:30px;flex:1;max-width:680px}
+  .hero h1,.hero .sub,.hero .cta-block{order:0}
+  .hero h1{font-size:50px;letter-spacing:-.8px}
+  .hero .hrule{display:block;width:64px;height:2px;background:var(--brand)}
   .hero .sub{font-size:21px}
-  .vsl{border-radius:14px;box-shadow:0 30px 60px rgba(110,26,11,.28)}
+  .hero .cta-block{align-items:flex-start}
+  .hero .support{justify-content:flex-start}
+  .vsl{width:405px;flex-shrink:0;box-shadow:0 30px 60px rgba(110,26,11,.3)}
 }
+@media (min-width:1280px){ .hero h1{font-size:58px} }
 
 /* Identificação */
 .symptoms{display:flex;flex-direction:column;border-bottom:1px solid var(--line)}
@@ -270,6 +268,8 @@ b,strong{font-weight:700}
 }
 
 /* Rodapé */
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:15px;font-weight:500;letter-spacing:3px;text-decoration:none}
+.logo img{height:28px;width:auto}
 .foot{background:var(--brand-deep);padding:32px var(--px);display:flex;flex-direction:column;gap:12px;color:var(--surface-2);font-size:14px}
 .foot .logo{color:var(--surface)} .foot .logo b{color:var(--surface)}
 @media (min-width:900px){ .foot{flex-direction:row;align-items:center;justify-content:space-between;padding:40px var(--px)} }
@@ -277,27 +277,24 @@ b,strong{font-weight:700}
 </head>
 <body>
 
-<header class="top">
-  <a class="logo" href="#topo"><img src="img/flame-brand.png" alt="" width="23" height="28">DE VOLTA AO <b>PRAZER</b></a>
-  <div class="by">com <span class="sc">Flávio Calheiros</span></div>
-</header>
-
 <main id="topo">
 
 <!-- 1. HERO / VSL -->
 <section class="hero">
   <div class="inner">
-    <div class="eyebrow"><b>3 aulas</b> com <span class="sc">Flávio Calheiros</span></div>
-    <h1>Volte a sentir <em>prazer</em> — sem fingir, sem culpa e sem esperar virar outra mulher.</h1>
+    <div class="htext">
+      <h1>Volte a sentir <em>prazer</em> — sem fingir, sem culpa e sem esperar virar outra mulher.</h1>
+      <div class="hrule"></div>
+      <p class="sub">Em 3 aulas, eu mostro o que desligou o seu desejo e conduzo você pelo caminho de volta: <b>mente, corpo e vínculo, nessa ordem.</b></p>
+      <div class="cta-block">
+      <a class="cta" href="https://pay.kiwify.com.br/ZJ5dGLc">Quero as 3 aulas <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <div class="support"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Acesso imediato · assista no seu tempo · 7 dias de garantia</span></div>
+    </div>
+    </div>
     <div class="vsl">
       <div class="ratio">
         <iframe id="panda-576d19ae-dbbc-41e7-b60e-04ef96e69fca" src="https://player-vz-117e771c-ccf.tv.pandavideo.com.br/embed/?v=576d19ae-dbbc-41e7-b60e-04ef96e69fca" style="border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="720" height="360" fetchpriority="high" title="De Volta ao Prazer — vídeo"></iframe>
       </div>
-    </div>
-    <p class="sub">Em 3 aulas, eu mostro o que desligou o seu desejo e conduzo você pelo caminho de volta: <b>mente, corpo e vínculo, nessa ordem.</b></p>
-    <div class="cta-block">
-      <a class="cta" href="https://pay.kiwify.com.br/ZJ5dGLc">Quero as 3 aulas <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-      <div class="support"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Acesso imediato · assista no seu tempo · 7 dias de garantia</span></div>
     </div>
   </div>
 </section>
